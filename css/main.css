@@ -1,0 +1,224 @@
+:root {
+  --main-color: #c57812;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+
+  /* font-family: "Caveat", cursive; */
+}
+
+::-webkit-scrollbar {
+  background-color: #fff;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  transition: 0.3s;
+  border-radius: 40px;
+
+  &:hover {
+    background-color: #8a540d;
+  }
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Small phones (less than 480px) */
+@media screen and (max-width: 479px) {
+  .container {
+    max-width: 95%;
+    padding: 0 10px;
+  }
+}
+
+/* Medium phones (480px to 767px) */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+/* Tablets (768px to 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    max-width: 85%;
+  }
+}
+
+/* Laptops (1025px to 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* Large screens (above 1440px) */
+@media screen and (min-width: 1441px) {
+  .container {
+    max-width: 75%;
+  }
+}
+
+.root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+section.hero {
+  background-color: #3f181c;
+  width: 100%;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  height: 72px;
+}
+
+.header-logo {
+  width: 70px;
+}
+
+nav {
+  @media screen and (max-width: 1024px) {
+    & .links {
+      display: none;
+
+      transition: 1s;
+      &.active {
+        display: flex;
+        position: fixed;
+        flex-flow: column;
+        background: #000;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 35%;
+        padding: 15px;
+        justify-content: space-evenly;
+        will-change: transform;
+        transform: scaleX(0);
+        transform-origin: right;
+        animation: active 0.3s ease-out forwards;
+      }
+    }
+    & .bars {
+      display: block;
+    }
+  }
+}
+@keyframes active {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.land {
+  min-height: calc(100vh - 72px);
+  transition: 1s;
+  opacity: 0;
+  transform: translateY(-50px);
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.landing {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.landing .landing-img .coffee-img {
+  width: 70%;
+  animation: ud-down 1s alternate ease-in-out infinite;
+}
+.landing .landing-img {
+  width: 50%;
+}
+.landing-text {
+  width: 50%;
+}
+.landing-text h1 {
+  font-family: "Caveat", cursive;
+  color: var(--main-color);
+}
+
+.landing-text h2,
+.landing-text p {
+  line-height: 1.6;
+}
+
+.landing {
+  @media screen and (min-width: 300px) and (max-width: 1024px) {
+    & {
+      flex-flow: column-reverse;
+      & .landing-img {
+        width: 100%;
+      }
+      & .landing-text {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.order-btn {
+  background: #c57812;
+  border-radius: 30px;
+  transition: 0.3s;
+  border: 1px solid #c57812;
+  &:hover {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+  }
+}
+
+.contact-btn {
+  background: transparent;
+  border-radius: 30px;
+  transition: 0.3s;
+  border: 1px solid #fff;
+  &:hover {
+    background-color: #c57812;
+    border-color: #c57812;
+    color: #000;
+  }
+}
+
+@keyframes ud-down {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
