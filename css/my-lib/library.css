@@ -71,7 +71,9 @@
 .gap-30 {
   gap: 30px;
 }
-
+.gap-15 {
+  gap: 15px;
+}
 .gap-10 {
   gap: 10px;
 }
@@ -93,6 +95,7 @@
 
 /* Start flex customize */
 .f-col {
+  display: flex;
   flex-direction: column;
 }
 
@@ -1247,3 +1250,11 @@ a {
 }
 
 /* end colors */
+
+/*  start  grid system  */
+.g-3col {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+/*  end  grid system  */

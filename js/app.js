@@ -7,10 +7,10 @@ bars.addEventListener("click", (e) => {
 
 document.addEventListener("click", (event) => {
   if (!links.contains(event.target) && !bars.contains(event.target)) {
-    links.classList.remove("active"); // إخفاء القائمة عند الضغط خارجها
+    links.classList.remove("active");
   }
 });
 
-document.addEventListener("DOMContentLoaded", (event) => {
+addEventListener("load", (event) => {
   document.querySelector(".land").classList.add("active");
 });
